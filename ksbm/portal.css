@@ -1,0 +1,122 @@
+/*
+@init
+*/
+
+
+/*@media screen and (min-width: 1024px){*/
+    /*:root{*/
+        /*--page-width: 970px;*/
+        /*--portals-width:700px;*/
+    /*}*/
+/*}*/
+
+#container{
+    width: 970px;
+    margin: 10px auto;
+}
+
+/*
+header
+*/
+header.top{
+    background-color: darkslategrey;
+    padding: 30px 0 20px 90px;
+}
+
+header.top h1,p{
+    margin: 0;
+}
+/*
+nav
+*/
+nav.top{
+    padding:15px;
+    background-color: #EEE;
+    border-radius: 2px;
+    margin: 0;
+}
+
+nav.top ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav.top li{
+     display:inline;
+    margin: 0 10px;
+ }
+
+nav.top a{
+    color: #222;
+    text-decoration: none;
+}
+
+/*
+    layout-table
+*/
+
+.layoutTable{
+    display: table;
+}
+
+.layoutRow{
+    display: table-row;
+}
+
+
+
+/*
+portals
+*/
+
+#portals{
+    /*width: var("--portals-width");*/
+    width: 700px;
+    display: table-cell;
+}
+
+#portals header{
+    margin: 15px 0 0 0;
+    padding: 10px 20px;
+    background-color: darkslategrey;
+    border-radius: 5px 5px 0 0;
+}
+
+#portals p{
+    width: 676px;
+    line-height: 1.6em;
+    padding: 3px 12px;
+    background-color: #EEE;
+}
+
+/*
+aside
+*/
+
+#sideBar section{
+    background-color: #EEE;
+    width: 230px;
+    margin-left: 20px;
+}
+
+#sideBar h4{
+    margin: 15px 0 0 0;
+    padding: 10px 20px;
+    background-color: darkslategrey;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+}
+#payPath{
+    text-align: center;
+}
+
+
+/*
+footer
+*/
+footer{
+    background-color: darkcyan;
+    margin: 70px auto auto auto;
+    text-align: center;
+}
