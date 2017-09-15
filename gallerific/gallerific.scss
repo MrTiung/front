@@ -1,10 +1,12 @@
 
 @font-face {
   font-family: Georgia;
+  src:url("font/Georgia.ttf");
 }
 $page-margin:20px;
 //common
 input[type=text]{
+  font-size: 13px;
   line-height: 100%;
   background: #E9E9E9;
   border-radius: 7px;
@@ -14,7 +16,7 @@ input[type=text]{
 }
 
 @mixin button-style{
-  font-size: 8px;
+  font-size: 13px;
   line-height: 100%;
   background: #41add6;
   border-radius: 7px;
@@ -28,7 +30,7 @@ input[type=text]{
          @include button-style;
          text-decoration: none;
          display: inline-block;
-         font: 27px/85% Georgia lighter;
+         font: 24px/85% Georgia lighter;
          padding: 14px auto;
 }
 
@@ -107,8 +109,8 @@ div,body,section,nav{
   $img-height: 400px;
   $img-width: 715px;
   .topStory-img{
-    background-color: #333333;
-    color: #333333;
+    background-color: #333;
+    color: #333;
     width: $img-width;
     height: $img-height;
     float: left;
@@ -121,7 +123,7 @@ div,body,section,nav{
     text-align: center;
     header{
       font: 36px Georgia;
-      color: #333333;
+      color: #333;
     }
     p{
       margin-top: 28.5px;
@@ -151,6 +153,97 @@ div,body,section,nav{
   }
 }
 
+.photos{
+  $photo-margin:30px;
+  margin:25px -#{$photo-margin / 2};
+  a img{
+    display: inline-block;
+    width: 300px;
+    height: 210px;
+    background-color: #333;
+    margin: $photo-margin/2;
+  }
+}
 
+footer{
+  border-top: #a3a3a3 solid 1px;
+  .footer-relative{
+    border-top: solid white 1px;
+    background-color: #1c1c1c;
+    height: 269px;
+  }
+  .copyright{
+    text-align: center;
+    clear: both;
+    font:12px/500% Georgia;
+    color: white;
+    background-color: #151515;
+    height: 60px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 7px;
+  }
+}
 
+.footer-relative{
+  overflow: hidden;
+  h3{
+    font: 16px/2em GeorGia;
+    color: white;
+  }
+  h4{
+    font: 13px GeorGia;
+    margin-bottom: -7.5px;
+    color: #40AED7;
+  }
+  p{
+    font: 13px/1.5em GeorGia;
+    color: #979797;
+  }
+  .footer-rel-col1{
+    float: left;
+    margin-left: $page-margin;
+    width: 25%;
+  }
+  .footer-rel-col2{
+    float: left;
+    width: 35%;
+  }
+  .footer-rel-col3{
+    float: right;
+    margin-right: $page-margin;
+  }
+
+}
+
+.footer-rel-col3 .register{
+  input,button{
+    font-size: 13px;
+    padding: 10px;
+  }
+  input{
+    color: #979797;
+    margin-top: 7px;
+    margin-right: 17px;
+    background-color: #1d1d1d;
+    border: solid 1px #181818;
+  }
+  button{
+    color: #41aed7;
+    background-color: #1d1d1d;
+    border: solid 1px #181818;
+  }
+}
+
+.social-url{
+  margin: 30px -10px;
+  @for $i from 1 through 4{
+    .icon#{$i}{
+      background: url("img/social_url.png" ) no-repeat -#{( ( $i - 1 ) * 65)}px;
+      width: 45px;
+      height: 45px;
+      display: inline-block;
+      margin: 10px;
+    }
+  }
+}
 
