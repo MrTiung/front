@@ -1,0 +1,156 @@
+
+@font-face {
+  font-family: Georgia;
+}
+$page-margin:20px;
+//common
+input[type=text]{
+  line-height: 100%;
+  background: #E9E9E9;
+  border-radius: 7px;
+  border: 0 none;
+  padding: 13px 7px;
+  color: black;
+}
+
+@mixin button-style{
+  font-size: 8px;
+  line-height: 100%;
+  background: #41add6;
+  border-radius: 7px;
+  border: 0 none;
+  padding: 13px 7px;
+  color: white;
+}
+
+.more{
+         white-space: nowrap;
+         @include button-style;
+         text-decoration: none;
+         display: inline-block;
+         font: 27px/85% Georgia lighter;
+         padding: 14px auto;
+}
+
+button{
+  @include button-style;
+}
+
+
+div,body,section,nav{
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+#container{
+  //width: 1000px;
+  margin: auto;
+}
+
+.header-lineDecoration {
+  background-color: #40AED7;
+  height: 5px;
+}
+
+#header{
+  //height: 142px;
+  border-bottom: solid 1px #D6D6D6;
+  margin: 1px 20px 0 20px;
+  padding-top: 1px;
+  #head{
+    float: left;
+    margin: 56px auto auto 0;
+    width: 200px;
+    .logo{
+      font: 32px/1em Georgia;
+      .first-letter{
+        font-size: 36px;
+      }
+    }
+    .slogan{
+      font: 12px/27px Georgia ;
+      color: #999;
+    }
+  }
+  nav{
+    margin-left: 244px;
+  }
+}
+
+#header nav{
+  text-align: right;
+  form .searchBox{
+    margin-top: 23px;
+    width: 231px;
+  }
+  ul.nav{
+    margin-top: 38px;
+    margin-bottom: 29px;
+    li{
+      display: inline;
+      margin-left: 20px;
+    }
+    a:link,a:visited{
+      text-decoration: none;
+      color: black;
+      font: 13px Georgia bolder;
+    }
+    li.selected a{
+      color: #41add6;
+    }
+  }
+}
+
+.topStory{
+  margin:50px $page-margin auto $page-margin;
+  $img-height: 400px;
+  $img-width: 715px;
+  .topStory-img{
+    background-color: #333333;
+    color: #333333;
+    width: $img-width;
+    height: $img-height;
+    float: left;
+  }
+  .topStory-content{
+    height: $img-height - 110px;
+    margin-left: $img-width+$page-margin;
+    margin-right: 20px;
+    padding-top: 110px;
+    text-align: center;
+    header{
+      font: 36px Georgia;
+      color: #333333;
+    }
+    p{
+      margin-top: 28.5px;
+      font: 12px Georgia;
+      color: #979797;
+    }
+    .more{
+      margin-top: 17px;
+    }
+  }
+}
+
+#gallery{
+  margin: 40px $page-margin;
+  text-align: center;
+  .desc{
+    header{
+      font: 36px Georgia;
+      color: #333;
+    }
+    p{
+      font: 19px Georgia;
+      line-height: 1.45em;
+      color: #333;
+      margin: 10px;
+    }
+  }
+}
+
+
+
+
