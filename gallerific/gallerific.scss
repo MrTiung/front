@@ -1,28 +1,46 @@
 
+$large:1024px;
+$middle:640px;
+$small:480px;
+
+@media screen and (min-width:1920px){
+  #container{
+    width: 1920px;
+  }
+}
+
 @font-face {
   font-family: Georgia;
   src:url("font/Georgia.ttf");
 }
 $page-margin:20px;
 //common
-input[type=text]{
-  font-size: 13px;
+
+@mixin input-style{
+  @media screen and (min-width: $large + 1){
+    font-size: 13px;
+    padding: 13px 7px;
+    border-radius: 7px;
+  }
+  @media screen and (max-width: $large){
+    font-size: 30px;
+    padding: 20px 12px;
+    border-radius: 12px;
+  }
   line-height: 100%;
-  background: #E9E9E9;
-  border-radius: 7px;
   border: 0 none;
-  padding: 13px 7px;
+}
+
+input[type=text]{
+  @include input-style;
   color: black;
+  background: #E9E9E9;
 }
 
 @mixin button-style{
-  font-size: 13px;
-  line-height: 100%;
-  background: #41add6;
-  border-radius: 7px;
-  border: 0 none;
-  padding: 13px 7px;
+  @include input-style;
   color: white;
+  background: #41add6;
 }
 
 .more{
@@ -43,6 +61,12 @@ div,body,section,nav{
   margin: 0;
   border: 0;
   padding: 0;
+  @media screen and (min-width: $large + 1){
+    font: 13px Georgia;
+  }
+  @media screen and (max-width: $large){
+    font: 30px Georgia;
+  }
 }
 
 #container{
@@ -56,14 +80,18 @@ div,body,section,nav{
 }
 
 #header{
+  @media screen and (max-width: $large){
+    text-align: center;
+  }
   //height: 142px;
   border-bottom: solid 1px #D6D6D6;
   margin: 1px 20px 0 20px;
   padding-top: 1px;
   #head{
-    float: left;
+    @media screen and (min-width: 1025px){
+      float: left;
+    }
     margin: 56px auto auto 0;
-    width: 200px;
     .logo{
       font: 32px/1em Georgia;
       .first-letter{
@@ -76,19 +104,27 @@ div,body,section,nav{
     }
   }
   nav{
-    margin-left: 244px;
+    @media screen and (min-width: $large + 1){
+      margin-left: 244px;
+    }
   }
 }
 
 #header nav{
-  text-align: right;
+  @media screen and (min-width: $large + 1){
+    text-align: right;
+  }
   form .searchBox{
     margin-top: 23px;
-    width: 231px;
+    @media screen and (min-width: $large + 1){
+      width: 231px;
+    }
   }
   ul.nav{
     margin-top: 38px;
     margin-bottom: 29px;
+    margin-left: -20;
+    padding: 0;
     li{
       display: inline;
       margin-left: 20px;
@@ -96,7 +132,6 @@ div,body,section,nav{
     a:link,a:visited{
       text-decoration: none;
       color: black;
-      font: 13px Georgia bolder;
     }
     li.selected a{
       color: #41add6;
@@ -108,12 +143,17 @@ div,body,section,nav{
   margin:50px $page-margin auto $page-margin;
   $img-height: 400px;
   $img-width: 715px;
+  @media screen and (max-width: $large){
+    text-align: center;
+  }
   .topStory-img{
     background-color: #333;
     color: #333;
     width: $img-width;
     height: $img-height;
-    float: left;
+    @media screen and (min-width: $large + 1){
+      float: left;
+    }
   }
   .topStory-content{
     height: $img-height - 110px;
@@ -121,6 +161,9 @@ div,body,section,nav{
     margin-right: 20px;
     padding-top: 110px;
     text-align: center;
+    @media screen and (max-width: $large){
+      display: none;
+    }
     header{
       font: 36px Georgia;
       color: #333;
@@ -170,7 +213,6 @@ footer{
   .footer-relative{
     border-top: solid white 1px;
     background-color: #1c1c1c;
-    height: 269px;
   }
   .copyright{
     text-align: center;
@@ -187,37 +229,55 @@ footer{
 .footer-relative{
   overflow: hidden;
   h3{
-    font: 16px/2em GeorGia;
+    font: 1.23em/2em GeorGia;
     color: white;
   }
   h4{
-    font: 13px GeorGia;
+    font: 1em GeorGia;
     margin-bottom: -7.5px;
     color: #40AED7;
   }
   p{
-    font: 13px/1.5em GeorGia;
+    font: 1em/1.5em GeorGia;
     color: #979797;
   }
-  .footer-rel-col1{
-    float: left;
-    margin-left: $page-margin;
-    width: 25%;
+
+  @media screen and (min-width: $large + 1){
+    .footer-rel-col1{
+      float: left;
+      margin-left: $page-margin;
+      width: 25%;
+    }
+    .footer-rel-col2{
+      float: left;
+      width: 35%;
+    }
+    .footer-rel-col3{
+      float: right;
+      margin-right: $page-margin;
+    }
   }
-  .footer-rel-col2{
-    float: left;
-    width: 35%;
-  }
-  .footer-rel-col3{
-    float: right;
-    margin-right: $page-margin;
+
+  @media screen and (max-width: $large ){
+    .footer-rel-col1{
+      float: left;
+      margin-left: $page-margin;
+      width: 40%;
+    }
+    .footer-rel-col2{
+      display: none;
+    }
+    .footer-rel-col3{
+      float: right;
+      margin-right: $page-margin;
+    }
   }
 
 }
 
 .footer-rel-col3 .register{
+  margin-right: 20px;
   input,button{
-    font-size: 13px;
     padding: 10px;
   }
   input{
